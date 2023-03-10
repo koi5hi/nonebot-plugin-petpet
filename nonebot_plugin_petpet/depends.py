@@ -3,25 +3,22 @@ import shlex
 from io import BytesIO
 from typing import List, Optional
 
-from nonebot.rule import Rule
-from nonebot import get_driver
-from nonebot.typing import T_State
-from nonebot.params import Depends
 from nonebot.adapters.onebot.v11 import (
     Bot,
-    Message,
-    MessageSegment,
-    MessageEvent,
     GroupMessageEvent,
+    Message,
+    MessageEvent,
+    MessageSegment,
     unescape,
 )
-
+from nonebot.params import Depends
+from nonebot.rule import Rule
+from nonebot.typing import T_State
 from nonebot_plugin_imageutils import BuildImage
 
-from .utils import UserInfo
 from .config import petpet_config
-from .download import download_url, download_avatar
-
+from .download import download_avatar, download_url
+from .utils import UserInfo
 
 USERS_KEY = "USERS"
 SENDER_KEY = "SENDER"
@@ -29,9 +26,7 @@ ARGS_KEY = "ARGS"
 REGEX_DICT = "REGEX_DICT"
 REGEX_ARG = "REGEX_ARG"
 
-command_start = petpet_config.petpet_command_start or "|".join(
-    get_driver().config.command_start
-)
+command_start = "|".join(petpet_config.petpet_command_start)
 
 
 def regex(pattern: str) -> Rule:

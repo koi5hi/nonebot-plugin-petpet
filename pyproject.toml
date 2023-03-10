@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nonebot_plugin_petpet"
-version = "0.3.15"
+version = "0.3.21"
 description = "Nonebot2 plugin for making fun pictures"
 authors = ["meetwq <meetwq@gmail.com>"]
 license = "MIT"
@@ -10,14 +10,13 @@ repository = "https://github.com/noneplugin/nonebot-plugin-petpet"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-nonebot2 = "^2.0.0-beta.4"
+nonebot2 = { version = "^2.0.0-rc.1", extras = ["fastapi"] }
 nonebot-adapter-onebot = "^2.1.1"
 httpx = ">=0.19.0"
 Pillow = "^9.0.0"
-nonebot-plugin-imageutils = "^0.1.13.2"
+nonebot-plugin-imageutils = "^0.1.14"
 
 [tool.poetry.dev-dependencies]
-nb-cli = "^0.6.0"
 black = "^22.1.0"
 
 [build-system]

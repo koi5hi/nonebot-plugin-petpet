@@ -10,8 +10,8 @@ _✨ [Nonebot2](https://github.com/nonebot/nonebot2) 插件，制作头像相关
 
 <p align="center">
   <img src="https://img.shields.io/github/license/noneplugin/nonebot-plugin-petpet" alt="license">
-  <img src="https://img.shields.io/badge/python-3.7.3+-blue.svg" alt="Python">
-  <img src="https://img.shields.io/badge/nonebot-2.0.0b4+-red.svg" alt="NoneBot">
+  <img src="https://img.shields.io/badge/python-3.8+-blue.svg" alt="Python">
+  <img src="https://img.shields.io/badge/nonebot-2.0.0rc1+-red.svg" alt="NoneBot">
   <a href="https://pypi.org/project/nonebot-plugin-petpet">
     <img src="https://badgen.net/pypi/v/nonebot-plugin-petpet" alt="pypi">
   </a>
@@ -23,9 +23,13 @@ _✨ [Nonebot2](https://github.com/nonebot/nonebot2) 插件，制作头像相关
 </div>
 
 
-文字类表情包制作：[nonebot-plugin-memes](https://github.com/noneplugin/nonebot-plugin-memes)
-
-风格logo图片制作：[nonebot-plugin-logo](https://github.com/noneplugin/nonebot-plugin-logo)
+> “头像表情包” 与 “文字表情包” 已合并！
+>
+> 表情包制作相关移至 [表情包生成器 meme-generator](https://github.com/MeetWq/meme-generator)
+>
+> Nonebot 插件端由 [nonebot-plugin-memes v0.4.x](https://github.com/noneplugin/nonebot-plugin-memes/tree/v0.4.x) 对接
+>
+> 本插件将继续维护一段时间，将不再添加新表情
 
 
 ### 安装
@@ -53,13 +57,12 @@ pip install nonebot_plugin_petpet
 
 ### 配置项
 
-<details>
-<summary>展开/收起</summary>
+> 以下配置项可在 `.env.*` 文件中设置，具体参考 [NoneBot 配置方式](https://v2.nonebot.dev/docs/tutorial/configuration#%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F)
 
 #### `petpet_command_start`
- - 类型：`str`
- - 默认：`""`
- - 说明：命令开始字符，为空则使用Nonebot设置中的`command_start`
+ - 类型：`List[str]`
+ - 默认：`[""]`
+ - 说明：命令起始标记，默认包含空字符串
 
 #### `petpet_resource_url`
  - 类型：`str`
@@ -91,17 +94,17 @@ pip install nonebot_plugin_petpet
  - 默认：`""`
  - 说明：百度翻译api相关，可在[百度翻译开放平台](http://api.fanyi.baidu.com)申请
 
-</details>
+ > “典中典”表情需要设置 `baidu_trans_appid` 和 `baidu_trans_apikey`
 
 
 ### 使用
 
-**以下命令需要加[命令前缀](https://v2.nonebot.dev/docs/api/config#Config-command_start) (默认为`/`)，可自行设置为空**
+**以下命令需要加[命令前缀](https://v2.nonebot.dev/docs/api/config#Config-command_start) (默认为`/`)，可自行设置为空: `.env.*` 文件中设置 `COMMAND_START=[""]`**
 
 发送“头像表情包”显示下图的列表：
 
 <div align="left">
-  <img src="https://s2.loli.net/2022/10/15/CiHyoqgI6eKSW9p.jpg" width="400" />
+  <img src="https://s2.loli.net/2023/03/10/6euhfEvRrNq2LPG.jpg" width="400" />
 </div>
 
 
@@ -150,6 +153,7 @@ pip install nonebot_plugin_petpet
 | 摸<br>摸摸<br>摸头<br>摸摸头<br>rua | <img src="https://s2.loli.net/2022/02/23/oNGVO4iuCk73g8S.gif" width="200" /> | 可使用参数“圆”让头像为圆形<br>如：摸头圆 自己 |
 | 亲<br>亲亲 | <img src="https://s2.loli.net/2022/02/23/RuoiqP8plJBgw9K.gif" width="200" /> | 可指定一个或两个目标<br>若为一个则为 发送人 亲 目标<br>若为两个则为 目标1 亲 目标2<br>如：亲 114514 自己 |
 | 贴<br>贴贴<br>蹭<br>蹭蹭 | <img src="https://s2.loli.net/2022/02/23/QDCE5YZIfroavub.gif" width="200" /> | 可指定一个或两个目标<br>类似 亲 |
+| 咖波蹭 | <img src="https://s2.loli.net/2022/11/29/iZpwCVWb5agDKLH.gif" width="200" > |  |
 | 顶<br>玩 | <img src="https://s2.loli.net/2022/08/16/WVotKxjqupdCJAS.gif" width="200" /> |  |
 | 拍 | <img src="https://s2.loli.net/2022/02/23/5mv6pFJMNtzHhcl.gif" width="200" /> |  |
 | 撕 | <img src="https://s2.loli.net/2022/05/29/FDcam9ROPkqvwxH.jpg" width="200" > |  |
@@ -162,6 +166,7 @@ pip install nonebot_plugin_petpet
 | 一直一直 | <img src="https://s2.loli.net/2022/10/15/hn5Q4jm29pXNsrL.gif" width="200" /> | 支持gif |
 | 加载中 | <img src="https://s2.loli.net/2022/02/23/751Oudrah6gBsWe.gif" width="200" /> | 支持gif |
 | 转 | <img src="https://s2.loli.net/2022/02/23/HoZaCcDIRgs784Y.gif" width="200" /> |  |
+| 风车转 | <img src="https://s2.loli.net/2022/12/17/7x8DHoYWnCBTeqL.gif" width="200" > |  |
 | 小天使 | <img src="https://s2.loli.net/2022/02/23/ZgD1WSMRxLIymCq.jpg" width="200" /> | 图中名字为目标qq昵称<br>可指定名字，如：小天使 meetwq 自己 |
 | 不要靠近 | <img src="https://s2.loli.net/2022/02/23/BTdkAzvhRDLOa3U.jpg" width="200" /> |  |
 | 一样 | <img src="https://s2.loli.net/2022/02/23/SwAXoOgfdjP4ecE.jpg" width="200" /> |  |
@@ -169,7 +174,9 @@ pip install nonebot_plugin_petpet
 | 玩游戏<br>来玩游戏 | <img src="https://s2.loli.net/2022/05/31/j9ZKB7cFOSklzMe.jpg" width="200" /> | 图中描述默认为：来玩休闲游戏啊<br>可指定描述<br>支持gif |
 | 膜<br>膜拜 | <img src="https://s2.loli.net/2022/02/23/nPgBJwV5qDb1s9l.gif" width="200" /> |  |
 | 吃 | <img src="https://s2.loli.net/2022/02/23/ba8cCtIWEvX9sS1.gif" width="200" /> |  |
+| 可莉吃 | <img src="https://s2.loli.net/2022/11/29/R12XlsdTjCYqnBh.gif" width="200" /> |  |
 | 啃 | <img src="https://s2.loli.net/2022/02/23/k82n76U4KoNwsr3.gif" width="200" /> |  |
+| 胡桃啃 | <img src="https://s2.loli.net/2022/11/29/JUCbMuxgpYDfAWo.gif" width="200" /> |  |
 | 出警 | <img src="https://s2.loli.net/2022/05/31/Q7WL1q2TlHgnERr.jpg" width="200" /> |  |
 | 警察 | <img src="https://s2.loli.net/2022/03/12/xYLgKVJcd3HvqfM.jpg" width="200" > |  |
 | 问问<br>去问问 | <img src="https://s2.loli.net/2022/02/23/GUyax1BF6q5Hvin.jpg" width="200" /> | 名字为qq昵称，可指定名字 |
@@ -212,6 +219,7 @@ pip install nonebot_plugin_petpet
 | 想什么 | <img src="https://s2.loli.net/2022/05/18/ck1jNO2K8Qd6Lo3.jpg" width="200" > | 支持gif |
 | 远离 | <img src="https://s2.loli.net/2022/05/31/lqyOu25WPTsGBcb.jpg" width="200" > | 可指定多个目标 |
 | 结婚申请<br>结婚登记 | <img src="https://s2.loli.net/2022/05/31/tZR3ls7cBrdGHTL.jpg" width="200" > |  |
+| 离婚协议<br>离婚申请 | <img src="https://s2.loli.net/2023/01/08/XHakWIShp7q1CjR.jpg" width="200" > |  |
 | 小画家 | <img src="https://s2.loli.net/2022/06/23/KCD73EbgqzWFxr4.jpg" width="200" > |  |
 | 复读 | <img src="https://s2.loli.net/2022/08/16/E6vgRCt3MSLfAWU.gif" width="200" > | 复读内容默认为“救命啊”<br>可指定多个目标 |
 | 防诱拐 | <img src="https://s2.loli.net/2022/07/21/ve6lcYaiV4wfhHg.jpg" width="200" > |  |
@@ -238,7 +246,29 @@ pip install nonebot_plugin_petpet
 | 急急国王 | <img src="https://s2.loli.net/2022/10/11/RqFP8Gtr2CQmSTU.jpg" width="200" > | 可指定方块中的字和描述<br>可用多个图片替代方块 |
 | 不文明 | <img src="https://s2.loli.net/2022/10/15/XBqrksgCcAx1YaH.jpg" width="200" > |  |
 | 一起 | <img src="https://s2.loli.net/2022/10/15/Ujt7avy9d5TfOlW.jpg" width="200" > |  |
-
+| 波纹 | <img src="https://s2.loli.net/2022/11/09/hTnrF1e5gaYbxsX.gif" width="200" > | 支持gif |
+| 诈尸<br>秽土转生 | <img src="https://s2.loli.net/2022/11/09/z2alEPjdsrNSyMU.gif" width="200" > |  |
+| 卡比锤<br>卡比重锤 | <img src="https://s2.loli.net/2022/11/09/ouF5MxzQaqjC64d.gif" width="200" > | 支持gif<br>可使用参数“圆”让头像为圆形 |
+| 木鱼 | <img src="https://s2.loli.net/2022/11/29/fuen9axo2d67bRE.gif" width="200" > |  |
+| 凯露指 | <img src="https://s2.loli.net/2022/11/29/8fjBb1rCe6oIdRY.png" width="200" > |  |
+| 踢球 | <img src="https://s2.loli.net/2022/11/29/o9zns8YvZLguV6G.gif" width="200" > |  |
+| 砸 | <img src="https://s2.loli.net/2022/11/29/fTqa5V1dArhxDHX.jpg" width="200" > | 支持gif |
+| 波奇手稿 | <img src="https://s2.loli.net/2022/11/29/Aw8HsGud7JoMKqW.gif" width="200" > |  |
+| 坐得住<br>坐的住 | <img src="https://s2.loli.net/2022/12/03/gaQsO6AkVtPF3CW.jpg" width="200" > | 图中名字为目标qq昵称<br>可自定义名字 |
+| 偷学 | <img src="https://s2.loli.net/2022/12/17/v6C9jegrNy1AJRu.jpg" width="200" > | 描述默认为“偷学群友数理基础”<br>可自定义描述 |
+| 恍惚 | <img src="https://s2.loli.net/2022/12/17/fU6i7tr8egbxaMI.jpg" width="200" > |  |
+| 恐龙<br>小恐龙 | <img src="https://s2.loli.net/2023/01/08/hWaoIZ4JxDgX9FA.jpg" width="200" > | 支持gif |
+| 挠头 | <img src="https://s2.loli.net/2023/01/08/DeuAJSQRdrC2v51.gif" width="200" > |  |
+| 鼓掌 | <img src="https://s2.loli.net/2023/01/08/SGhsngjWQLRemPd.gif" width="200" > |  |
+| 追列车<br>追火车 | <img src="https://s2.loli.net/2023/01/08/NJ1FnKkdcrDBtEx.gif" width="200" > |  |
+| 万花筒<br>万花镜 | <img src="https://s2.loli.net/2023/01/08/obSnWmDOiFcqYkN.jpg" width="200" > | 支持gif<br>可使用参数“圆”让头像为圆形 |
+| 加班 | <img src="https://s2.loli.net/2023/01/08/LTcqjGobDkSVQIN.jpg" width="200" > |  |
+| 头像公式<br>等价无穷小 | <img src="https://s2.loli.net/2023/01/28/7CQWSZieyXm5THY.jpg" width="200" > |  |
+| 土豆 | <img src="https://s2.loli.net/2023/01/28/5PAfjsgwBdNzlbn.jpg" width="200" > |  |
+| 打印 | <img src="https://s2.loli.net/2023/01/28/s9F5Ar6QKOqLtBi.gif" width="200" > |  |
+| 亚文化取名机<br>亚名 | <img src="https://s2.loli.net/2023/03/10/MnQHlIA67fG243B.jpg" width="200" > |  |
+| 拍头<br>怎么说话的 | <img src="https://s2.loli.net/2023/03/10/3iTgNzhotWV8U1q.gif" width="200" > |  |
+| 奶茶 | <img src="https://s2.loli.net/2023/03/10/jTQAvhuiypsE8dS.jpg" width="200" > |  |
 </details>
 
 
